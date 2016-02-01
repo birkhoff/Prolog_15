@@ -95,7 +95,22 @@ b --> [b],b.
 	
 	
 
-	
+% hinter jede 5 eine 6 einfuegen 
+%
+% sechs([1,2,3,4,5],[1,2,3,4,5,6])
+% 
+% sechs([5,7],[5,6,7])
+% sech([5,5,5],[5,6,5,6,5,6]).
+%
+
+sechs([],[]). 
+
+sechs([5|T],[5,6|R]):-
+	!,					% cut ist notwendig fuer ein deterministisches Ergebnis
+	sechs(T,R).
+
+sechs([_|T],R):-
+	sechs(T,R).
 	
 	
 	
