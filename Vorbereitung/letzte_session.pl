@@ -109,7 +109,7 @@ sechs([5|T],[5,6|R]):-
 	!,					% cut ist notwendig fuer ein deterministisches Ergebnis
 	sechs(T,R).
 
-sechs([_|T],R):-
+sechs([E|T],[E|R]):-
 	sechs(T,R).
 	
 	
